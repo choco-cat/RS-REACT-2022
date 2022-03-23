@@ -1,17 +1,27 @@
 import React from 'react';
 import Header from '../components/header';
 import Search from '../components/search';
+type SearchProps = { searchValue: string };
 
-export default class extends React.Component {
+export default class extends React.Component<SearchProps> {
+  state = {
+    search: '',
+  };
+
+  onChangeVal(val: string) {
+    this.onChangeVal = this.onChangeVal.bind(this);
+    this.setState({ search: val });
+  }
+
   render() {
     return (
       <>
-        <header className="App-header">
-          <Header />
-          <div>Home</div>
-        </header>
+        <Header pageName="Home" />
         <main>
-          <Search />
+          <Search
+            searchValue={this.state.search}
+            onChange={(val: string) => this.onChangeVal(val)}
+          />
         </main>
       </>
     );

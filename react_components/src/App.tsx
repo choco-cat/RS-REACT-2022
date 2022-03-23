@@ -12,7 +12,7 @@ export default class extends React.Component {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home searchValue="" />} />
             <Route path="about" element={<About />} />
             <Route path="404" element={<NotFound />} />
             <Route path="*" element={<NotFound />} />
