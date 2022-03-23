@@ -9,13 +9,13 @@
     box-shadow: 0 3px 3px rgb(255 255 255 / 10%), 0 3px 0 #363535, 0 4px 0 #282c34, 0 7px 6px #000000;
     border-radius: 10px;
     background-color: #61dafb;
+    display: flex;
+    gap: 0.5em;
 }
 
 .form-wrapper #search {
-    width: 360px;
     height: 20px;
     padding: 10px 5px;
-    float: left;
     font: bold 16px 'lucida sans', 'trebuchet MS', 'Tahoma';
     border: 1px solid #ccc;
     -moz-box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
@@ -24,6 +24,7 @@
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
     border-radius: 3px;
+    flex-grow: 1;
 }
 
 .form-wrapper #search:focus {
@@ -50,7 +51,6 @@
 }
 
 .form-wrapper #submit {
-    float: right;
     border: 1px solid #00748f;
     height: 42px;
     width: 70px;
