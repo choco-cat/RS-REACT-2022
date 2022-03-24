@@ -18,7 +18,7 @@ export default class extends React.Component<SearchProps> {
   render() {
     return (
       <>
-        <Header pageName="Home" />
+        <Header pageName="Home Page" />
         <main>
           <Search
             searchValue={this.state.search}
