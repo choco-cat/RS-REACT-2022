@@ -11,7 +11,6 @@ export default class extends React.Component<MyProps, MyState> {
   };
 
   render() {
-    //const { pageName } = this.props.children.;
     return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

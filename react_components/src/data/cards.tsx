@@ -7,6 +7,7 @@ export default cards = [
     image: 'img/cry.jpg',
     author: 'Nata',
     views: 3,
+    rating: 0,
   },
   {
     id: 1,
@@ -15,6 +16,7 @@ export default cards = [
     image: 'img/dance.jpg',
     author: 'David K.',
     views: 4,
+    rating: 1,
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ export default cards = [
     image: 'img/dive.jpg',
     author: 'Jenni',
     views: 31,
+    rating: 11,
   },
   {
     id: 3,
@@ -31,6 +34,7 @@ export default cards = [
     image: 'img/draw.jpg',
     author: 'Mikel',
     views: 2,
+    rating: 1,
   },
   {
     id: 4,
@@ -39,6 +43,7 @@ export default cards = [
     image: 'img/fish.jpg',
     author: 'Yeva L.',
     views: 15,
+    rating: 6,
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ export default cards = [
     image: 'img/fly.jpg',
     author: 'Iren',
     views: 11,
+    rating: 3,
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ export default cards = [
     image: 'img/hug.jpg',
     author: 'Patric',
     views: 13,
+    rating: 8,
   },
   {
     id: 7,
@@ -63,6 +70,7 @@ export default cards = [
     image: 'img/jump.jpg',
     author: 'Kitty',
     views: 9,
+    rating: 1,
   },
   {
     id: 8,
@@ -71,6 +79,7 @@ export default cards = [
     image: 'img/open.jpg',
     author: 'Big Boss',
     views: 8,
+    rating: 4,
   },
   {
     id: 9,
@@ -79,6 +88,7 @@ export default cards = [
     image: 'img/play.jpg',
     author: 'Lapa',
     views: 6,
+    rating: 1,
   },
   {
     id: 10,
@@ -87,6 +97,7 @@ export default cards = [
     image: 'img/point.jpg',
     author: 'Nata',
     views: 9,
+    rating: 2,
   },
   {
     id: 11,
@@ -95,6 +106,7 @@ export default cards = [
     image: 'img/ride.jpg',
     author: 'David',
     views: 10,
+    rating: 5,
   },
   {
     id: 12,
@@ -103,6 +115,7 @@ export default cards = [
     image: 'img/run.jpg',
     author: 'Aleksander',
     views: 22,
+    rating: 4,
   },
   {
     id: 13,
@@ -111,6 +124,7 @@ export default cards = [
     image: 'img/sing.jpg',
     author: 'Serj',
     views: 19,
+    rating: 8,
   },
   {
     id: 14,
@@ -119,6 +133,7 @@ export default cards = [
     image: 'img/skip.jpg',
     author: 'Nonna',
     views: 24,
+    rating: 12,
   },
   {
     id: 15,
@@ -127,6 +142,7 @@ export default cards = [
     image: 'img/swim.jpg',
     author: 'Michael',
     views: 13,
+    rating: 4,
   },
   {
     id: 16,
@@ -135,6 +151,7 @@ export default cards = [
     image: 'img/cat.jpg',
     author: 'Natali',
     views: 22,
+    rating: 11,
   },
   {
     id: 17,
@@ -143,6 +160,7 @@ export default cards = [
     image: 'img/chick.jpg',
     author: 'Maria',
     views: 15,
+    rating: 7,
   },
   {
     id: 18,
@@ -151,6 +169,7 @@ export default cards = [
     image: 'img/chicken.jpg',
     author: 'Little zji',
     views: 18,
+    rating: 8,
   },
   {
     id: 19,
@@ -159,6 +178,7 @@ export default cards = [
     image: 'img/dog.jpg',
     author: 'your boy',
     views: 3,
+    rating: 0,
   },
   {
     id: 20,
@@ -167,6 +187,7 @@ export default cards = [
     image: 'img/horse.jpg',
     author: 'Lika',
     views: 0,
+    rating: 0,
   },
   {
     id: 21,
@@ -175,6 +196,7 @@ export default cards = [
     image: 'img/pig.jpg',
     author: 'Nika',
     views: 2,
+    rating: 1,
   },
   {
     id: 22,
@@ -183,6 +205,7 @@ export default cards = [
     image: 'img/rabbit.jpg',
     author: 'Jeka',
     views: 13,
+    rating: 3,
   },
   {
     id: 23,
@@ -191,6 +214,7 @@ export default cards = [
     image: 'img/sheep.jpg',
     author: 'Ihar',
     views: 6,
+    rating: 1,
   },
   {
     id: 24,
@@ -199,6 +223,7 @@ export default cards = [
     image: 'img/bird.jpg',
     author: 'Nata',
     views: 9,
+    rating: 2,
   },
   {
     id: 25,
@@ -207,6 +232,7 @@ export default cards = [
     image: 'img/fish1.jpg',
     author: 'Ihar',
     views: 11,
+    rating: 4,
   },
   {
     id: 26,
@@ -215,6 +241,7 @@ export default cards = [
     image: 'img/frog.jpg',
     author: 'Maria',
     views: 18,
+    rating: 11,
   },
   {
     id: 27,
@@ -223,6 +250,7 @@ export default cards = [
     image: 'img/giraffe.jpg',
     author: 'David',
     views: 23,
+    rating: 9,
   },
   {
     id: 28,
@@ -231,6 +259,7 @@ export default cards = [
     image: 'img/lion.jpg',
     author: 'Lika',
     views: 19,
+    rating: 6,
   },
   {
     id: 29,
@@ -239,6 +268,7 @@ export default cards = [
     image: 'img/mouse.jpg',
     author: 'your boy',
     views: 23,
+    rating: 4,
   },
   {
     id: 30,
@@ -247,6 +277,7 @@ export default cards = [
     image: 'img/turtle.jpg',
     author: 'nika',
     views: 15,
+    rating: 3,
   },
   {
     id: 31,
@@ -255,6 +286,7 @@ export default cards = [
     image: 'img/dolphin.jpg',
     author: 'lika',
     views: 10,
+    rating: 1,
   },
   {
     id: 32,
@@ -263,6 +295,7 @@ export default cards = [
     image: 'img/skirt.jpg',
     author: 'victor',
     views: 0,
+    rating: 0,
   },
   {
     id: 33,
@@ -271,6 +304,7 @@ export default cards = [
     image: 'img/pants.jpg',
     author: 'lika',
     views: 1,
+    rating: 0,
   },
   {
     id: 34,
@@ -279,6 +313,7 @@ export default cards = [
     image: 'img/blouse.jpg',
     author: 'Nonna',
     views: 8,
+    rating: 1,
   },
   {
     id: 35,
@@ -287,6 +322,7 @@ export default cards = [
     image: 'img/dress.jpg',
     author: 'Natali',
     views: 15,
+    rating: 2,
   },
   {
     id: 36,
@@ -295,5 +331,6 @@ export default cards = [
     image: 'img/boot.jpg',
     author: 'Jeka',
     views: 19,
+    rating: 11,
   },
 ];
