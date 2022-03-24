@@ -1,12 +1,12 @@
 .form-wrapper {
     width: 450px;
     padding: 8px;
-    margin: 100px auto;
+    margin: 50px auto;
     overflow: hidden;
     border-width: 1px;
     border-style: solid;
     border-color: #282c34 #444 #282c34 #282c34;
-    box-shadow: 0 3px 3px rgb(255 255 255 / 10%), 0 3px 0 #363535, 0 4px 0 #282c34, 0 7px 6px #000000;
+    box-shadow: 0 3px 3px rgb(255 255 255/10%), 0 3px 0 #363535, 0 4px 0 #282c34, 0 7px 6px #000000;
     border-radius: 10px;
     background-color: #61dafb;
     display: flex;

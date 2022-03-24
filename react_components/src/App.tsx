@@ -1,6 +1,7 @@
 import React from 'react';
-import './App.css';
-import './search.css';
+import './css/App.css';
+import './css/search.css';
+import './css/cards.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import About from './routes/about';
 import NotFound from './routes/not-found';

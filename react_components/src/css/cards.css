@@ -1,0 +1,71 @@
+.card-container {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-wrapper {
+    flex: 0 0 25%;
+    max-width: 25%;
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.card {
+    margin-bottom: 32px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.card > .face {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    border: 1px solid rgba(0,0,0,.125);
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.card > .face:hover {
+    box-shadow: 0 0 10px rgba(0,0,50,0.5);
+}
+
+.front {
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    background: #ffffff;
+}
+
+.front.rotate{
+    transform: rotateY(-180deg);
+}
+
+.back.rotate {
+    transform: rotateY(0deg);
+}
+
+.card-wrapper.finally {
+    transition: 0.5s;
+    filter: blur(3px) opacity(60%);
+}
+
+.card-img-middle {
+    zoom: 0.95;
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+    -ms-transform: translateX(-20%);
+    transform: translateX(-20%);
+}
