@@ -17,7 +17,6 @@ export default class extends React.Component<MyProps, MyState> {
         <nav>
           <Link to="/about">About</Link>
           <Link to="/">Home</Link>
-          <Link to="/404">Not found</Link>
         </nav>
         <div>{this.props.pageName}</div>
       </header>

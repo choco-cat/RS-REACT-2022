@@ -1,11 +1,16 @@
 import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import App from './App';
+import App, {LocationDisplay} from './App';
+import PageRouter from './components/router';
 import './helpers/mock-localstorage';
+import { createMemoryHistory } from 'history';
+import { Router } from 'react-router-dom';
+import '@testing-library/jest-dom';
+
 const randomString = require('randomstring');
 
-describe("App", () => {
+describe("Check app", () => {
   it("simple card", () => {
     render(<App/>);
     expect(screen.getByText(/dance/i)).toBeInTheDocument();
@@ -36,21 +41,40 @@ describe("App", () => {
   });
 });
 
-describe("Menu, routing", () => {
-  it("About Page", () => {
-    render(<App/>);
-    fireEvent.click(screen.getByText('About'));
-    expect(screen.getByText(/about page/i)).toBeInTheDocument();
-  });
-  it("Home Page", () => {
+describe("Check Menu, routing", () => {
+  it("click into menu link Home", () => {
     render(<App/>);
     fireEvent.click(screen.getByText('Home'));
     expect(screen.getByText(/home page/i)).toBeInTheDocument();
   });
-  it("404 page", () => {
+
+  it("click into menu link About", () => {
     render(<App/>);
-    fireEvent.click(screen.getByText('Not found'));
+    fireEvent.click(screen.getByText('About'));
+    expect(screen.getByText(/about page/i)).toBeInTheDocument();
+  });
+
+  it('testing page not found', () => {
+    const history = createMemoryHistory();
+    const route = `/${randomString.generate(6)}`;
+    history.push(route);
+    render(
+      <Router location={history.location} navigator={history}>
+        <PageRouter/>
+      </Router>
+    )
     expect(screen.getByText(/page not found/i)).toBeInTheDocument();
   });
-});
 
+  it('rendering a component that uses useLocation', () => {
+    const history = createMemoryHistory();
+    const route = `/${randomString.generate(6)}`;
+    history.push(route);
+    render(
+      <Router location={history.location} navigator={history}>
+        <LocationDisplay/>
+      </Router>
+    )
+    expect(screen.getByTestId('location-display')).toHaveTextContent(route);
+  });
+});
