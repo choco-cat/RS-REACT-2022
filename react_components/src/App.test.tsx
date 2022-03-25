@@ -3,6 +3,7 @@ import {render, screen, fireEvent} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 import './helpers/mock-localstorage';
+const randomString = require('randomstring');
 
 describe("App", () => {
   it("simple card", () => {
@@ -26,13 +27,11 @@ describe("App", () => {
   it("actions with search input", () => {
     render(<App/>);
     localStorage.clear();
-    const searchWord = 'lalala';
+    const searchWord = randomString.generate();
     userEvent.type(screen.getByRole('textbox'), searchWord);
-    // сделать переключение на др. страницу
     fireEvent.click(screen.getByText('About'));
     localStorage.getItem('search');
     const localStorageValue = localStorage.getItem('search');
-    console.log(localStorageValue);
     expect(searchWord).toBe(localStorageValue);
   });
 });
