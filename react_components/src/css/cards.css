@@ -22,11 +22,29 @@
     background: transparent;
 }
 
+.card h3 {
+    font-size: 1.4em;
+    margin: 0.5em 0;
+}
+
+.card p {
+    margin: 0.4em 0;
+    color: #555;
+}
+
+.card-body {
+    padding: 0 1em 1em;
+}
+
+.card p span {
+    font-weight: 400;
+    margin-right: 0.5em;
+}
+
 .card > .face {
     backface-visibility: hidden;
     transition: transform 300ms;
     transition-timing-function: linear;
-    border: 1px solid rgba(0,0,0,.125);
     height: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -36,10 +54,6 @@
 
 .card > .face:hover {
     box-shadow: 0 0 10px rgba(0,0,50,0.5);
-}
-
-.front {
-    transform: rotateY(0deg);
 }
 
 .back {
