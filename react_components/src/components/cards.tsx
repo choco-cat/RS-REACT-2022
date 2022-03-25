@@ -18,9 +18,12 @@ export default class extends React.Component {
                 </div>
                 <div className="card-body">
                   <h3>{card.word}</h3>
-                  <p>{card.translation}</p>
-                  <p>{card.author}</p>
-                  <p>{card.views}</p>
+                  <p>Translation: {card.translation}</p>
+                  <p>
+                    <span>Author:</span>
+                    {card.author}
+                  </p>
+                  <p>Views: {card.views}</p>
                 </div>
               </div>
             </div>

@@ -1,11 +1,19 @@
 import React from 'react';
 import {render, screen, fireEvent} from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
+import './helpers/mock-localstorage';
 
 describe("App", () => {
   it("simple card", () => {
     render(<App/>);
     expect(screen.getByText(/dance/i)).toBeInTheDocument();
+  });
+  it("all cards", () => {
+    render(<App/>);
+    //const cardsImgs = screen.getAllByAltText(/image/i);
+    const cardsImgs = screen.getAllByText('Author:');
+    expect(cardsImgs.length > 16).toBeTruthy();
   });
   it("search input existence and focus", () => {
     render(<App/>);
@@ -14,6 +22,18 @@ describe("App", () => {
     expect(input).not.toHaveFocus();
     input.focus();
     expect(input).toHaveFocus();
+  });
+  it("actions with search input", () => {
+    render(<App/>);
+    localStorage.clear();
+    const searchWord = 'lalala';
+    userEvent.type(screen.getByRole('textbox'), searchWord);
+    // сделать переключение на др. страницу
+    fireEvent.click(screen.getByText('About'));
+    localStorage.getItem('search');
+    const localStorageValue = localStorage.getItem('search');
+    console.log(localStorageValue);
+    expect(searchWord).toBe(localStorageValue);
   });
 });
 
@@ -35,19 +55,3 @@ describe("Menu, routing", () => {
   });
 });
 
-describe('events', () => {
-  it('input focus', () => {
-    const {getByTestId} = render(
-      <input
-        id="search"
-        type="text"
-        placeholder="Search..."
-        name="search"
-        data-testid="search-input"/>
-    );
-    const input = getByTestId("search-input");
-    expect(input).not.toHaveFocus();
-    input.focus();
-    expect(input).toHaveFocus();
-  });
-});
