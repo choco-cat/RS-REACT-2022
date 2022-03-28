@@ -16,7 +16,6 @@ describe("Check app", () => {
   });
   it("all cards", () => {
     render(<App/>);
-    //const cardsImgs = screen.getAllByAltText(/image/i);
     const cardsImgs = screen.getAllByText('Author:');
     expect(cardsImgs.length > 16).toBeTruthy();
   });
