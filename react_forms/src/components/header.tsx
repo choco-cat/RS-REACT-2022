@@ -15,8 +15,9 @@ export default class extends React.Component<MyProps, MyState> {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <nav>
-          <Link to="/about">About</Link>
           <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/form">Form</Link>
         </nav>
         <div>{this.props.pageName}</div>
       </header>

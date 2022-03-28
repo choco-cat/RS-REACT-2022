@@ -6,6 +6,7 @@ import Cards from '../components/cards';
 type SearchProps = { searchValue: string };
 
 export default class extends React.Component<SearchProps> {
+  pageName = 'Home page';
   state = {
     search: '',
   };
@@ -18,7 +19,7 @@ export default class extends React.Component<SearchProps> {
   render() {
     return (
       <>
-        <Header pageName="Home Page" />
+        <Header pageName={this.pageName} />
         <main>
           <Search
             searchValue={this.state.search}

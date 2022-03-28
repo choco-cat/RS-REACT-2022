@@ -11,6 +11,15 @@ export const LocationDisplay = () => {
 };
 
 export default class extends React.Component {
+  state = {
+    pageName: 'Home Page',
+  };
+
+  onChangeVal(val: string) {
+    this.onChangeVal = this.onChangeVal.bind(this);
+    this.setState({ pageName: val });
+  }
+
   render() {
     return (
       <div className="App">
