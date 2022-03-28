@@ -3,7 +3,6 @@ import {render, screen, fireEvent} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App, {LocationDisplay} from './App';
 import PageRouter from './components/router';
-import './helpers/mock-localstorage';
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
@@ -34,23 +33,25 @@ describe("Check app", () => {
     localStorage.clear();
     const searchWord = randomString.generate();
     userEvent.type(screen.getByRole('textbox'), searchWord);
-    fireEvent.click(screen.getByText('About'));
-    localStorage.getItem('search');
+    userEvent.click(screen.getByText('About'));
     const localStorageValue = localStorage.getItem('search');
     expect(searchWord).toBe(localStorageValue);
+    userEvent.click(screen.getByText('Home'));
+    const input = screen.getByRole('textbox') as HTMLInputElement;
+    expect(input.value).toBe(searchWord);
   });
 });
 
 describe("Check Menu, routing", () => {
   it("click into menu link Home", () => {
     render(<App/>);
-    fireEvent.click(screen.getByText('Home'));
+    userEvent.click(screen.getByText('Home'));
     expect(screen.getByText(/home page/i)).toBeInTheDocument();
   });
 
   it("click into menu link About", () => {
     render(<App/>);
-    fireEvent.click(screen.getByText('About'));
+    userEvent.click(screen.getByText('About'));
     expect(screen.getByText(/about page/i)).toBeInTheDocument();
   });
 
