@@ -1,21 +1,25 @@
 import React from 'react';
 import Input from './input';
 
-type formElements = { inputName: string; ref: React.RefObject<HTMLInputElement>; rule: string };
+type formElements = {
+  inputName: string;
+  type?: string;
+  ref?: React.RefObject<HTMLInputElement>;
+  rule: string;
+};
 
 export default class extends React.Component<object> {
   private readonly inputs: Array<formElements>;
+
   constructor(props: object) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    //const inputField = React.useRef() ;
     this.inputs = [
-      { inputName: 'inputRefFirstName', ref: React.createRef(), rule: 'alpha' },
-      { inputName: 'inputRefLastName', ref: React.createRef(), rule: 'alpha' },
-      { inputName: 'inputRefDate', ref: React.createRef(), rule: 'date' },
+      { inputName: 'First Name', rule: 'alpha' },
+      { inputName: 'Last Name', rule: 'alpha' },
+      { inputName: 'Date of Birth', rule: 'date' },
+      { inputName: 'Sex', rule: 'check', type: 'checkbox' },
     ];
-    this.validationForm.bind(this);
-    this.onChangeRef.bind(this);
   }
 
   handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -23,13 +27,18 @@ export default class extends React.Component<object> {
     e.preventDefault();
   }
 
-  validationForm(e: React.MouseEvent<HTMLInputElement>) {
+  validationForm(e: React.MouseEvent<HTMLInputElement>): boolean {
     console.log('onClick');
-    this.inputs.map((input: formElements, i: number) => {
-      console.log(
-        'validate =' + input.inputName + ' ' + input.ref.current!.value + ' ' + input.rule
-      );
+    this.inputs.map((input: formElements) => {
+      const checkValue =
+        input.type === 'checkbox' ? input.ref!.current!.checked : input.ref!.current!.value;
+      this.validationRule(input.rule, checkValue);
     });
+    return true;
+  }
+
+  validationRule(rule: string, checkValue: string | boolean) {
+    console.log(`validate input ${checkValue} ${rule}`);
   }
 
   onChangeRef(val: React.RefObject<HTMLInputElement>, i: number) {
@@ -43,7 +52,7 @@ export default class extends React.Component<object> {
           <div className="card-wrapper" key={i}>
             <Input
               inputName={input.inputName}
-              rule={input.rule}
+              type={input.type}
               sendRef={(val: React.RefObject<HTMLInputElement>) => this.onChangeRef(val, i)}
             />
           </div>

@@ -1,16 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 type onRefFunction = (val: React.RefObject<HTMLInputElement>) => void;
-type InputProps = { inputName: string; rule: string; sendRef: onRefFunction };
+type InputProps = { inputName: string; sendRef: onRefFunction; type?: string };
 
 export default class extends React.Component<InputProps> {
-  private input: { inputName: string; ref: React.RefObject<HTMLInputElement>; rule: string };
-  static propTypes = {
-    sendRef: PropTypes.func,
+  private input: {
+    inputName: string;
+    ref: React.RefObject<HTMLInputElement>;
+    type?: string;
   };
+
   constructor(props: InputProps) {
     super(props);
-    this.input = { inputName: this.props.inputName, ref: React.createRef(), rule: this.props.rule };
+    this.input = {
+      inputName: this.props.inputName,
+      type: this.props.type,
+      ref: React.createRef(),
+    };
   }
 
   componentDidMount() {
@@ -21,7 +26,7 @@ export default class extends React.Component<InputProps> {
     return (
       <label>
         {this.input.inputName}
-        <input type="text" ref={this.input.ref} />
+        <input type={this.input.type} ref={this.input.ref} />
       </label>
     );
   }
