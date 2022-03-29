@@ -26,7 +26,7 @@ export default class extends React.Component<InputProps> {
     return (
       <label>
         {this.input.inputName}
-        <input type={this.input.type} ref={this.input.ref} />
+        <input type={this.input.type} ref={this.input.ref} name={this.input.inputName} />
       </label>
     );
   }
