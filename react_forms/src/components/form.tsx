@@ -21,6 +21,7 @@ export default class extends React.Component<object> {
       { inputName: 'Accept', rule: 'check', type: 'checkbox' },
       { inputName: 'Radio', rule: 'check', type: 'radio' },
       { inputName: 'Radio', rule: 'check', type: 'radio' },
+      { inputName: 'Upload image', rule: 'file', type: 'file' },
     ];
   }
 
@@ -33,7 +34,7 @@ export default class extends React.Component<object> {
     console.log('onClick');
     this.inputs.map((input: formElements) => {
       const checkValue =
-        input.type === 'checkbox' || 'radio'
+        input.type === 'checkbox' || input.type === 'radio'
           ? input.ref!.current!.checked
           : input.ref!.current!.value;
       this.validationRule(input.rule, checkValue);
